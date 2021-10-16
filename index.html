@@ -7,6 +7,7 @@
     <script src="js/loadImagesSequentially.js"></script>
 
     <script src="jq/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 
 
     <title>POKEMAS PAIRS</title>
@@ -18,6 +19,59 @@
 
     <!-- <script src="js/grayscale.js"></script> -->
     <!-- <canvas id="canvas" width="200" height="200"></canvas> -->
+    
+    <script type="text/javascript">
   
+      // Define the function 
+      // to screenshot the div
+      function takeshot() {
+          let tableDiv = document.getElementById('table1');
+          let tableDivParent = tableDiv.parentElement;
+          const belowDiv = document.createElement("h1")
+          const belowDivText = document.createTextNode("Save image ABOVE with RIGHT CLICK");
+          belowDiv.appendChild(belowDivText)
+
+          const aboveDiv = document.createTextNode("SAVE BELOW IMAGE WITH RIGHT CLICK");
+          screenshotButton = document.getElementById("screenshotBtn")
+          let screenshotBtnDivParent = screenshotButton.parentElement;
+
+          // Use the html2canvas
+          // function to take a screenshot
+          // and append it
+          // to the output div
+          html2canvas(tableDiv).then(
+              function (canvas) {
+                canvas.style.border = "4px solid black";
+                document
+                .getElementById('output')
+                .appendChild(canvas);
+
+                // screenshotBtnDivParent.insert(aboveDiv, screenshotButton)
+                // screenshotBtnDivParent.appendChild(aboveDiv)
+
+                tableDivParent.insertBefore(belowDiv, tableDiv)
+
+                // document.getElementById("screenshotBtn").appendChild(aboveDiv)
+                // canvas.appendChild(saveDiv)
+                // document
+                // .getElementById('canvas')
+                // .appendChild(saveDiv);
+                // canvas.download = 'filename.png';
+                // var link = document.createElement('a');
+                // link.download = 'filename.png';
+                // link.href = document.getElementById('canvas').toDataURL();
+                // link.click();
+                // canvas.toDataURL();
+              })
+      }
+  </script>
+
+  <button id='screenshotBtn' onclick="takeshot()">
+      Take Screenshot
+  </button>
+  
+  <h1>Screenshot will appear here if you click "Take Screenshot":</h1>
+  <div id="output"></div>
+
   </body>
 </html>
