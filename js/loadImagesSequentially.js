@@ -20,7 +20,7 @@ function loadImagesSequential(){
         var height = screen.height;
         img = new Image();
         img.onload = imgArray.push(img);
-        img.width = width / 18;
+        img.width = width / 13;
         img.height = height / 12;
         img.src = 'images/all_both/bw_' + j + '.png';
     }
