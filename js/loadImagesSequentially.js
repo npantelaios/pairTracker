@@ -3,6 +3,8 @@ function loadImagesSequential(){
     var totalImages = 184;
     var rowLength = 12
 
+
+
     var img;
     var imgArray = new Array();
     
@@ -16,14 +18,15 @@ function loadImagesSequential(){
     // end of main calls
 
     function loadImage(j) {
-        var width = screen.width;
-        var height = screen.height;
+        var ratio = window.devicePixelRatio || 1;
+        var w = screen.width * ratio;
+        var h = screen.height * ratio;
         img = new Image();
         img.onload = imgArray.push(img);
-        img.width = width / 13;
-        img.height = height / 12;
+        img.width = w / 13;
+        img.height = h / 12;
         img.src = 'images/all_both/bw_' + j + '.png';
-        img.setAttribute("class", "col-md-1")
+        // img.setAttribute("class", "col-md-1")
     }
 
     function createTable(tableData) {
