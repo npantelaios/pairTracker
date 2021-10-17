@@ -23,9 +23,17 @@ function loadImagesSequential(){
         // var h = screen.height * ratio;
         var w = document.documentElement.clientWidth;
         var h = document.documentElement.clientHeight;
+        console.log(w)
+        console.log(h)
+        // var w = window.
         img = new Image();
         img.onload = imgArray.push(img);
-        img.width = w / 13;
+        if (w < 1200){
+            img.width = 100;
+        }
+        else {
+            img.width = w / 13;
+        }
         img.height = h / 12;
         img.src = 'images/all_both/bw_' + j + '.png';
         // img.setAttribute("class", "col-md-1")
