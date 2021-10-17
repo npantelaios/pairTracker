@@ -19,8 +19,10 @@ function loadImagesSequential(){
 
     function loadImage(j) {
         var ratio = window.devicePixelRatio || 1;
-        var w = screen.width * ratio;
-        var h = screen.height * ratio;
+        // var w = screen.width * ratio;
+        // var h = screen.height * ratio;
+        var w = document.documentElement.clientWidth;
+        var h = document.documentElement.clientHeight;
         img = new Image();
         img.onload = imgArray.push(img);
         img.width = w / 13;
