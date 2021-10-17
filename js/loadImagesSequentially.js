@@ -23,8 +23,6 @@ function loadImagesSequential(){
         // var h = screen.height * ratio;
         var w = document.documentElement.clientWidth;
         var h = document.documentElement.clientHeight;
-        console.log(w)
-        console.log(h)
         // var w = window.
         img = new Image();
         img.onload = imgArray.push(img);
