@@ -23,6 +23,7 @@ function loadImagesSequential(){
         img.width = width / 13;
         img.height = height / 12;
         img.src = 'images/all_both/bw_' + j + '.png';
+        img.setAttribute("class", "col-md-1")
     }
 
     function createTable(tableData) {
