@@ -15,6 +15,21 @@
 
   <!-- BODY STARTS-->
   <body onload="loadImagesSequential()">
+
+    <div>
+      <button  style="display: none;" style="font-size:40px" onclick="location.href = 'index.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
+      <button  style="font-size:40px" onclick="location.href = 'html/eggmons.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
+      <button  style="font-size:40px" onclick="location.href = 'html/limited.html';" id="myButton" class="float-left submit-button" >LimitedAll</button>
+      <button  style="font-size:40px" onclick="location.href = 'html/masterfair.html';" id="myButton" class="float-left submit-button" >MasterFair</button>
+      <button  style="font-size:40px" onclick="location.href = 'html/pokefair.html';" id="myButton" class="float-left submit-button" >PokeFair</button>    
+      <button  style="font-size:40px" onclick="location.href = 'html/seasonal.html';" id="myButton" class="float-left submit-button" >Seasonal</button>
+      <button  style="font-size:40px" onclick="location.href = 'html/f2p.html';" id="myButton" class="float-left submit-button" >F2P</button>
+      <!-- <button  style="font-size:40px" onclick="location.href = 'html/males.html';" id="myButton" class="float-left submit-button" >Females</button>
+      <button  style="font-size:40px" onclick="location.href = 'html/females.html';" id="myButton" class="float-left submit-button" >Males</button> -->
+
+
+  </div>
+
     <h2>WHICH PAIRS DO YOU OWN?</h2>
 
     <!-- <script src="js/grayscale.js"></script> -->
@@ -45,7 +60,8 @@
                 // document
                 // .getElementById('output')
                 // .appendChild(canvas);
-
+                console.log(canvas.width)
+                console.log(canvas.height)
                 let pnGImage = new Image();
                 pnGImage.src = canvas.toDataURL();
                 pnGImage.style.border = "12px solid red";

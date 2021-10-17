@@ -33,7 +33,8 @@ function loadImagesSequential(){
             img.width = w / 13;
         }
         img.height = h / 12;
-        img.src = 'images/all_both/bw_' + j + '.png';
+        // img.src = 'images/all_both/bw_' + j + '.png';
+        img.src = 'images/new_limited/bw_' + j + '.png';
         // img.setAttribute("class", "col-md-1")
     }
 
