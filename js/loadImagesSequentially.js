@@ -1,7 +1,7 @@
 function loadImagesSequential(){
     // SET VARIABLES
-    var totalImages = 4;
-    var rowLength = 4
+    var totalImages = 184;
+    var rowLength = 12
 
     var img;
     var imgArray = new Array();

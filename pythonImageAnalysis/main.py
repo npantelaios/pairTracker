@@ -1,11 +1,13 @@
 import os
 import psutil
 from time import sleep
+import shutil
 
 import numpy as np
 import cv2
 from PIL import Image, ImageDraw
 from matplotlib import cm
+import errno
 
 
 def main() -> None:
@@ -14,15 +16,35 @@ def main() -> None:
 
 
 def mc_distinguish(in_path: str) -> None:
-    # TODO: makedir if not exists
-    for i, img_path in enumerate(sorted(os.listdir(in_path))):
+    out_path = "../images/all_both/"
+    delete_directory(out_path)
+    create_directory(out_path)
+    cnt = 0
+    for img_path in sorted(os.listdir(in_path)):
+        if "Main_Character" in img_path:
+            continue
         rgb_img = open_img_path(in_path + img_path)
-        # test image
+        rgb_img.save(out_path + 'clr_' + str(cnt) + ".png")
         # test_image_by_showing(rgb_img)
         gray_img = greyscale_avg(rgb_img)
         gray_img = Image.fromarray(np.uint8(cm.gist_earth(gray_img)*255))
-    # TODO: save greyscale images with bw_ + number and with clr_ + number
-    # TODO: copy folders to ../images/all_both
+        gray_img.save(out_path + 'bw_' + str(cnt) + ".png")
+        cnt += 1
+
+
+def delete_directory(out_path: str) -> None:
+    try:
+        shutil.rmtree(out_path)
+    except OSError as e:
+        print("Error: %s : %s" % (out_path, e.strerror))
+
+
+def create_directory(out_path: str) -> None:
+    try:
+        os.makedirs(out_path)
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            raise
 
 
 def open_img_path(img_path: str) -> Image:
