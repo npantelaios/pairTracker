@@ -15,16 +15,16 @@
   </head>
 
   <!-- BODY STARTS-->
-  <body onload="loadImagesSequential('limited',45)">
+  <body onload="loadImagesSequential('images/all_names',180)">
 
     <div>
-      <button  style="display: none;" style="font-size:40px" onclick="location.href = 'index.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
+      <button  style="display: none;" style="font-size:40px" onclick="location.href = 'index.html';" id="myButton" class="float-left submit-button" >AllPairs</button>
       <button  style="font-size:40px" onclick="location.href = 'html/eggmons.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
       <button  style="font-size:40px" onclick="location.href = 'html/limited.html';" id="myButton" class="float-left submit-button" >LimitedAll</button>
       <button  style="font-size:40px" onclick="location.href = 'html/masterfair.html';" id="myButton" class="float-left submit-button" >MasterFair</button>
       <button  style="font-size:40px" onclick="location.href = 'html/pokefair.html';" id="myButton" class="float-left submit-button" >PokeFair</button>    
       <button  style="font-size:40px" onclick="location.href = 'html/seasonal.html';" id="myButton" class="float-left submit-button" >Seasonal</button>
-      <button  style="font-size:40px" onclick="location.href = 'html/f2p.html';" id="myButton" class="float-left submit-button" >F2P</button>
+      <!-- <button  style="font-size:40px" onclick="location.href = 'html/f2p.html';" id="myButton" class="float-left submit-button" >F2P</button> -->
       <!-- <button  style="font-size:40px" onclick="location.href = 'html/males.html';" id="myButton" class="float-left submit-button" >Females</button>
       <button  style="font-size:40px" onclick="location.href = 'html/females.html';" id="myButton" class="float-left submit-button" >Males</button> -->
 
@@ -66,6 +66,7 @@
                 let pnGImage = new Image();
                 pnGImage.src = canvas.toDataURL();
                 pnGImage.style.border = "12px solid red";
+                document.getElementById("output").href = pnGImage.src
                 document.getElementById("output").appendChild(pnGImage);
                 // screenshotBtnDivParent.insert(aboveDiv, screenshotButton)
                 // screenshotBtnDivParent.appendChild(aboveDiv)
@@ -92,7 +93,8 @@
   </button>
   
   <h1>Screenshot will appear BELOW - RIGHT CLICK TO SAVE IMAGE</h1>
-  <div id="output"></div>
+  <!-- <div id="output"></div> -->
+  <a id="output" href="" download="AwesomeImage.png">
 
   </body>
 </html>

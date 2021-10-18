@@ -1,26 +1,36 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="../css/basic.css">
 
-    <script src="js/loadImages.js"></script>
-    <script src="js/loadImagesSequentially.js"></script>
+    <script src="../js/loadImagesSequentially.js"></script>
 
-    <script src="jq/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <!-- <script data-main="scripts/app" src="scripts/require.js"></script> -->
 
 
     <title>POKEMAS PAIRS</title>
   </head>
 
   <!-- BODY STARTS-->
-  <body onload="loadImagesSequential()">
-    <button  style="font-size:40px" onclick="location.href = '../index.html';" id="myButton" class="float-left submit-button" >All</button>
-    <button style="display: none;" style="font-size:40px" onclick="location.href = 'eggmons.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
+  <body onload="loadImagesSequential('../images/limited',45)">
+
+    <div>
+      <button  style="font-size:40px" onclick="location.href = '../index.html';" id="myButton" class="float-left submit-button" >AllPairs</button>
+      <button  style="font-size:40px" onclick="location.href = 'eggmons.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
+      <button  style="display: none;" style="font-size:40px" onclick="location.href = 'limited.html';" id="myButton" class="float-left submit-button" >LimitedAll</button>
+      <button  style="font-size:40px" onclick="location.href = 'masterfair.html';" id="myButton" class="float-left submit-button" >MasterFair</button>
+      <button  style="font-size:40px" onclick="location.href = 'pokefair.html';" id="myButton" class="float-left submit-button" >PokeFair</button>    
+      <button  style="font-size:40px" onclick="location.href = 'seasonal.html';" id="myButton" class="float-left submit-button" >Seasonal</button>
+      <!-- <button  style="font-size:40px" onclick="location.href = 'f2p.html';" id="myButton" class="float-left submit-button" >F2P</button> -->
+      <!-- <button  style="font-size:40px" onclick="location.href = 'html/males.html';" id="myButton" class="float-left submit-button" >Females</button>
+      <button  style="font-size:40px" onclick="location.href = 'html/females.html';" id="myButton" class="float-left submit-button" >Males</button> -->
 
 
+  </div>
 
-    <h2>WHICH EGGMONS DO YOU OWN?</h2>
+    <h2>WHICH PAIRS DO YOU OWN?</h2>
 
     <!-- <script src="js/grayscale.js"></script> -->
     <!-- <canvas id="canvas" width="200" height="200"></canvas> -->
@@ -55,6 +65,7 @@
                 let pnGImage = new Image();
                 pnGImage.src = canvas.toDataURL();
                 pnGImage.style.border = "12px solid red";
+                document.getElementById("output").href = pnGImage.src
                 document.getElementById("output").appendChild(pnGImage);
                 // screenshotBtnDivParent.insert(aboveDiv, screenshotButton)
                 // screenshotBtnDivParent.appendChild(aboveDiv)
@@ -81,7 +92,8 @@
   </button>
   
   <h1>Screenshot will appear BELOW - RIGHT CLICK TO SAVE IMAGE</h1>
-  <div id="output"></div>
+  <!-- <div id="output"></div> -->
+  <a id="output" href="" download="AwesomeImage.png">
 
   </body>
 </html>

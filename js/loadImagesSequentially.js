@@ -30,11 +30,12 @@ function loadImagesSequential(name, length){
 
     function loadImage(j) {
         var ratio = window.devicePixelRatio || 1;
-        // var w = screen.width * ratio;
-        // var h = screen.height * ratio;
-        var w = document.documentElement.clientWidth;
-        var h = document.documentElement.clientHeight;
-        // var w = window.
+        var w = screen.width * ratio;
+        var h = screen.height * ratio;
+        // var w = screen.width;
+        // var h = screen.height;
+        // var w = document.documentElement.clientWidth;
+        // var h = document.documentElement.clientHeight;
         img = new Image();
         img.onload = imgArray.push(img);
         if (w < 1200){
@@ -45,7 +46,7 @@ function loadImagesSequential(name, length){
         }
         img.height = h / 12;
         // img.src = 'images/all_both/bw_' + j + '.png';
-        img.src = `images/${name}/bw_${j}.png`;
+        img.src = `${name}/bw_${j}.png`;
         // img.setAttribute("class", "col-md-1")
     }
 
