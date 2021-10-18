@@ -1,9 +1,8 @@
 - (Next) add Sync Move Level (1/5 - 5/5)
-- (Next) change PNG source -> move to the rectangular images??
 
-- add TAB: only pokefairs/master fairs
-- add TAB: only seasonals 
-- add TAB: eggmon dex
+- add cookies to save selections
+- add counter how many pairs out of total
 - add pairs in full-mode (from inspect character in-game)
 - add EX button for each pair (changing image appearance with EX)
 - add TAB: only males/females
+- fix resolution for mobile (low priority)
