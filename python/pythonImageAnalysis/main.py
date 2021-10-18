@@ -65,7 +65,8 @@ def test_image_by_showing(rgb_img: Image) -> None:
             proc.kill()
 
 
-def fadeAlpha(im: Image):
+def fadeAlpha(im2: Image):
+    im = im2.copy()
     im.putalpha(255)
     width, height = im.size
     pixels = im.load()

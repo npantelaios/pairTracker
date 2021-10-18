@@ -6,15 +6,16 @@
     <script src="js/loadImages.js"></script>
     <script src="js/loadImagesSequentially.js"></script>
 
-    <script src="jq/jquery-3.6.0.min.js"></script>
+    <script src="scripts/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <!-- <script data-main="scripts/app" src="scripts/require.js"></script> -->
 
 
     <title>POKEMAS PAIRS</title>
   </head>
 
   <!-- BODY STARTS-->
-  <body onload="loadImagesSequential()">
+  <body onload="loadImagesSequential('limited',45)">
 
     <div>
       <button  style="display: none;" style="font-size:40px" onclick="location.href = 'index.html';" id="myButton" class="float-left submit-button" >Eggmons</button>

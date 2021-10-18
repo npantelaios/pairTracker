@@ -1,6 +1,17 @@
-function loadImagesSequential(){
+
+function loadImagesSequential(name, length){
+    // import fs from 'fs'
+
     // SET VARIABLES
-    var totalImages = 184;
+    // const dir = "../images/" + name;
+
+    var totalImages = length
+    
+
+    // fs.readdir(dir, (err, files) => {
+    //     totalImages = files.length;
+    //     console.log(files.length)
+    // });
     var rowLength = 12
 
 
@@ -34,7 +45,7 @@ function loadImagesSequential(){
         }
         img.height = h / 12;
         // img.src = 'images/all_both/bw_' + j + '.png';
-        img.src = 'images/new_limited/bw_' + j + '.png';
+        img.src = `images/${name}/bw_${j}.png`;
         // img.setAttribute("class", "col-md-1")
     }
 
@@ -82,6 +93,9 @@ function loadImagesSequential(){
       if (typeof elmt !== 'undefined') {
           state = (elmt.src.indexOf("bw_") === -1) ? 'clr' : 'bw';
           (state === 'bw') ? elmt.src = elmt.src.replace('bw_','clr_') : elmt.src = elmt.src.replace('clr_','bw_');  
+      }
+      else{
+          console.log("undefined")
       }
     }
       
