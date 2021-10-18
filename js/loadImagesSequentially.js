@@ -44,7 +44,7 @@ function loadImagesSequential(name, length){
         else {
             img.width = w / 13;
         }
-        img.height = h / 12;
+        img.height = img.width
         // img.src = 'images/all_both/bw_' + j + '.png';
         img.src = `${name}/bw_${j}.png`;
         // img.setAttribute("class", "col-md-1")
