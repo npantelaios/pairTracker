@@ -33,11 +33,13 @@ def traverse_dir(in_dir: str) -> None:
         create_directory(out_path)
     cnt = [0] * no_categories
     for img in sorted(os.listdir(in_dir)):
-        rgb_img = Image.open(in_dir + img)
         img = img.split(".png")[0]
         for i, key in enumerate(d):
+            # if key == "all_names" and "Main_Character" in img:
+            #     continue
             if img in d[key]:
                 out_path = "../../images/" + str(key) + '/'
+                rgb_img = Image.open(in_dir + img + ".png")
                 rgb_img.save(out_path + 'clr_' + str(cnt[i]) + ".png")
                 gray_img = fadeAlpha(rgb_img)
                 # gray_img = greyscale_avg(rgb_img)
