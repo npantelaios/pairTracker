@@ -1,17 +1,6 @@
 
-function loadImagesSequential(name, length){
-    // import fs from 'fs'
-
-    // SET VARIABLES
-    // const dir = "../images/" + name;
-
+function loadImagesSequential(name, length, localstorageName){
     var totalImages = length
-    
-
-    // fs.readdir(dir, (err, files) => {
-    //     totalImages = files.length;
-    //     console.log(files.length)
-    // });
     var rowLength = 12
 
 
@@ -22,6 +11,7 @@ function loadImagesSequential(name, length){
     for(var j=0; j < totalImages; j++){
         loadImage(j);
     }
+
 
     createTable(imgArray);
     changeTableClass();
@@ -51,29 +41,44 @@ function loadImagesSequential(name, length){
     }
 
     function createTable(tableData) {
-        var table = document.createElement('table');
-        // for screenshot purposes add #id=table1
-        table.setAttribute("id", "table1");
+        var prevState = document.createElement('table');
+        prevState.innerHTML = localStorage.getItem('myTable'+localstorageName);
+        if (prevState.innerHTML.length < 20){
+            var table = document.createElement('table');
+            // for screenshot purposes add #id=table0
+            table.setAttribute("id", "table0");
+            // for localstorage purposes add .class=table1
+            table.setAttribute("class", "table1");
 
-        var tableBody = document.createElement('tbody');
-        var row = document.createElement('tr');
-        var cnt = 0
+            var tableBody = document.createElement('tbody');
+            var row = document.createElement('tr');
+            var cnt = 0
 
-        tableData.forEach(function(rowData) {
-      
-            var cell = document.createElement('td');
-            cell.appendChild(rowData);
-            row.appendChild(cell);
-            
-            cnt++
-            if (cnt % rowLength == 0 || (cnt == totalImages)){
-                tableBody.appendChild(row);
-                row = document.createElement('tr');
-            }
-        });
-      
-        table.appendChild(tableBody);
-        document.body.appendChild(table);
+            tableData.forEach(function(rowData) {
+        
+                var cell = document.createElement('td');
+                cell.appendChild(rowData);
+                row.appendChild(cell);
+                
+                
+                cnt++
+                if (cnt % rowLength == 0 || (cnt == totalImages)){
+                    tableBody.appendChild(row);
+                    row = document.createElement('tr');
+                }
+            });
+        
+            table.appendChild(tableBody);
+            document.body.appendChild(table);
+            localStorage.setItem("myTable"+localstorageName, table.outerHTML);
+        }
+        else{
+            var myTable = document.createElement('table');
+            myTable.setAttribute("id", "table0");
+            myTable.setAttribute("class", "table1");
+            myTable.innerHTML = localStorage.getItem("myTable"+localstorageName)
+            document.body.appendChild(myTable);
+        }
     }
 
     function changeTableClass() {
@@ -99,5 +104,16 @@ function loadImagesSequential(name, length){
           console.log("undefined")
       }
     }
-      
+
+
+}
+
+function resetLocalstorage(){
+    // localStorage.clear()
+    var images = document.getElementsByClassName("img1");
+    for (i=0; i<images.length; i++){
+        if (images[i].src.indexOf("bw_") === -1){
+            images[i].src = images[i].src.replace('clr_','bw_')
+        }
+    }
 }

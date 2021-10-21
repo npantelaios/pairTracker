@@ -14,12 +14,12 @@
   </head>
 
   <!-- BODY STARTS-->
-  <body onload="loadImagesSequential('../images/limited',45)">
+  <body onload="loadImagesSequential('../images/limited',45,'limited')">
 
     <div>
       <button  style="font-size:40px" onclick="location.href = '../index.html';" id="myButton" class="float-left submit-button" >AllGacha</button>
       <button  style="font-size:40px" onclick="location.href = 'eggmons.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
-      <button  style="display: none;" style="font-size:40px" onclick="location.href = 'limited.html';" id="myButton" class="float-left submit-button" >LimitedAll</button>
+      <button  style="border:10px solid black;font-size:40px" onclick="location.href = 'limited.html';" id="myButton" class="float-left submit-button" >LimitedAll</button>
       <button  style="font-size:40px" onclick="location.href = 'masterfair.html';" id="myButton" class="float-left submit-button" >MasterFair</button>
       <button  style="font-size:40px" onclick="location.href = 'pokefair.html';" id="myButton" class="float-left submit-button" >PokeFair</button>    
       <button  style="font-size:40px" onclick="location.href = 'seasonal.html';" id="myButton" class="float-left submit-button" >Seasonal</button>
@@ -30,70 +30,78 @@
 
   </div>
 
-    <h2>WHICH PAIRS DO YOU OWN?</h2>
-
-    <!-- <script src="js/grayscale.js"></script> -->
-    <!-- <canvas id="canvas" width="200" height="200"></canvas> -->
-    
-    <script type="text/javascript">
+  <h2>WHICH PAIRS DO YOU OWN? </h2>
+  <h3 class="pairCount" style="border: 12px solid red; font-size: 40px; width: 200px; text-align:center;"></h3>
   
-      // Define the function 
-      // to screenshot the div
-      function takeshot() {
-          let tableDiv = document.getElementById('table1');
-          let tableDivParent = tableDiv.parentElement;
-          const belowDiv = document.createElement("h1")
-          const belowDivText = document.createTextNode("Save image ABOVE with RIGHT CLICK");
-          belowDiv.appendChild(belowDivText)
+  <script type="text/javascript">
 
-          const aboveDiv = document.createTextNode("SAVE BELOW IMAGE WITH RIGHT CLICK");
-          screenshotButton = document.getElementById("screenshotBtn")
-          let screenshotBtnDivParent = screenshotButton.parentElement;
+    function takeshot() {
+        let tableDiv = document.getElementById('table0');
+        console.log(tableDiv.length)
+        let tableDivParent = tableDiv.parentElement;
+        const belowDiv = document.createElement("h1")
+        const belowDivText = document.createTextNode("Save image ABOVE with RIGHT CLICK");
+        belowDiv.appendChild(belowDivText)
 
-          // Use the html2canvas
-          // function to take a screenshot
-          // and append it
-          // to the output div
-          html2canvas(tableDiv).then(
-              function (canvas) {
+        html2canvas(tableDiv).then(
+            function (canvas) {
 
-                // document
-                // .getElementById('output')
-                // .appendChild(canvas);
-                console.log(canvas.width)
-                console.log(canvas.height)
-                let pnGImage = new Image();
-                pnGImage.src = canvas.toDataURL();
-                pnGImage.style.border = "12px solid red";
-                document.getElementById("output").href = pnGImage.src
-                document.getElementById("output").appendChild(pnGImage);
-                // screenshotBtnDivParent.insert(aboveDiv, screenshotButton)
-                // screenshotBtnDivParent.appendChild(aboveDiv)
+              console.log(canvas.width)
+              console.log(canvas.height)
+              let pnGImage = new Image();
+              pnGImage.src = canvas.toDataURL();
+              pnGImage.style.border = "12px solid red";
+              document.getElementById("output").href = pnGImage.src
+              document.getElementById("output").appendChild(pnGImage);
 
-                tableDivParent.insertBefore(belowDiv, tableDiv)
+              tableDivParent.insertBefore(belowDiv, tableDiv);
+            })
+    }
+</script>
 
-                // document.getElementById("screenshotBtn").appendChild(aboveDiv)
-                // canvas.appendChild(saveDiv)
-                // document
-                // .getElementById('canvas')
-                // .appendChild(saveDiv);
-                // canvas.download = 'filename.png';
-                // var link = document.createElement('a');
-                // link.download = 'filename.png';
-                // link.href = document.getElementById('canvas').toDataURL();
-                // link.click();
-                // canvas.toDataURL();
-              })
+<button id='screenshotBtn' onclick="takeshot()" style="font-size:40px">
+    Take Screenshot 
+</button>
+
+<h1>Screenshot will appear BELOW - RIGHT CLICK TO SAVE IMAGE</h1>
+<!-- <div id="output"></div> -->
+<a id="output" href="" download="AwesomeImage.png" ></a>
+
+
+
+<button id='clearBtn' onclick="resetLocalstorage()" style="font-size:40px">
+  Reset 
+</button>
+
+<script>
+  var htmlName = "limited"
+  // Will execute myCallback every 1 second
+  var intervalLocalstorage = window.setInterval(localstorageCallback, 1000);
+
+  function localstorageCallback() {
+    let myTable = document.getElementsByClassName("table1")
+    if(myTable.length > 0){
+      localStorage.setItem("myTable"+htmlName, myTable[0].outerHTML);
+    }
+  }
+
+  var intervalPaircounter = window.setInterval(paircounterCallback, 1000);
+  function paircounterCallback() {
+    var images = document.getElementsByClassName("img1");
+    var totalPairs = String(images.length);
+    var cnt = 0;
+    for (i=0; i<images.length; i++){
+      if (images[i].src.indexOf("bw_") === -1){
+        cnt ++;
       }
-  </script>
+    }
+    var activePairs = String(cnt);
+    var countPairElmt = document.getElementsByClassName("pairCount")[0]
+    countPairElmt.innerHTML = activePairs + '/' + totalPairs;
+  }
 
-  <button id='screenshotBtn' onclick="takeshot()" style="font-size:40px">
-      Take Screenshot
-  </button>
-  
-  <h1>Screenshot will appear BELOW - RIGHT CLICK TO SAVE IMAGE</h1>
-  <!-- <div id="output"></div> -->
-  <a id="output" href="" download="AwesomeImage.png">
+</script>
 
-  </body>
+
+</body>
 </html>
