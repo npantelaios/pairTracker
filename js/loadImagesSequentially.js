@@ -162,7 +162,7 @@ function loadImagesSequential(name, length, localstorageName, initPath){
 
 
 function resetLocalstorage(){
-    // localStorage.clear()
+    localStorage.clear()
     var images = document.getElementsByClassName("img1");
     for (i=0; i<images.length; i++){
         if (images[i].src.indexOf("bw_") === -1){
