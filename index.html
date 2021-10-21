@@ -15,7 +15,7 @@
   </head>
 
   <!-- BODY STARTS-->
-  <body onload="loadImagesSequential('images/all_names',105,'all_names')">
+  <body style="background-color: aquamarine;" onload="loadImagesSequential('images/all_names',105,'all_names', 'images/')">
 
     <div>
       <button  style="border:10px solid black;font-size:40px" onclick="location.href = 'index.html';" id="myButton" class="float-left submit-button" >AllGacha</button>
@@ -29,14 +29,6 @@
       <button  style="font-size:40px" onclick="location.href = 'html/females.html';" id="myButton" class="float-left submit-button" >Males</button> -->
 
 
-  </div>
-
-  <div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
   </div>
 
     <h2>WHICH PAIRS DO YOU OWN? </h2>
@@ -85,7 +77,7 @@
   <script>
     var htmlName = "all_names"
     // Will execute myCallback every 1 second
-    var intervalLocalstorage = window.setInterval(localstorageCallback, 1000);
+    var intervalLocalstorage = window.setInterval(localstorageCallback, 500);
 
     function localstorageCallback() {
       let myTable = document.getElementsByClassName("table1")

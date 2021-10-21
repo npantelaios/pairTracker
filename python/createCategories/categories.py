@@ -53,7 +53,7 @@ def fadeAlpha(im2: Image):
     im.putalpha(255)
     width, height = im.size
     pixels = im.load()
-    fade255 = 150
+    fade255 = 50
     # for y in range(int(height*.55), int(height*.75)):
     for y in range(height):
         # alpha = 255-int((y - height*.55)/height/.20 * 255)

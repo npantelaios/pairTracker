@@ -1,9 +1,5 @@
 - (Next) add Sync Move Level (1/5 - 5/5)
 
-- add cookies to save selections
-- add reset button
-- add counter how many pairs out of total
 - add pairs in full-mode (from inspect character in-game)
-- add EX button for each pair (changing image appearance with EX)
 - add TAB: only males/females
-- fix resolution for mobile (low priority)
+- add EX button for each pair (changing image appearance with EX)

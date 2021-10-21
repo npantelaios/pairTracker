@@ -14,7 +14,7 @@
   </head>
 
   <!-- BODY STARTS-->
-  <body onload="loadImagesSequential('../images/limited',45,'limited')">
+  <body style="background-color: aquamarine;" onload="loadImagesSequential('../images/limited',45,'limited','../images/')">
 
     <div>
       <button  style="font-size:40px" onclick="location.href = '../index.html';" id="myButton" class="float-left submit-button" >AllGacha</button>
@@ -76,7 +76,7 @@
 <script>
   var htmlName = "limited"
   // Will execute myCallback every 1 second
-  var intervalLocalstorage = window.setInterval(localstorageCallback, 1000);
+  var intervalLocalstorage = window.setInterval(localstorageCallback, 500);
 
   function localstorageCallback() {
     let myTable = document.getElementsByClassName("table1")
