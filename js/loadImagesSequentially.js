@@ -204,8 +204,6 @@ function loadImagesSequential(name, length, localstorageName, initPath){
 
 }
 
-
-
 function resetLocalstorage(htmlName){
     localStorage.removeItem("myTable"+htmlName);
     var images = document.getElementsByClassName("img1");
