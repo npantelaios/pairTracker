@@ -1,11 +1,12 @@
 import os
+from os import path
 import errno
 import shutil
 
 from PIL import Image
 
 categories = ["all_names", "eggmons", "limited",
-              "masterfairs", "pokefairs", "seasonals"]
+              "masterfairs", "pokefairs", "seasonals", "females", "males", "freebies", "six_only"]
 
 no_categories = len(categories)
 
@@ -16,6 +17,7 @@ def main():
     initialize_dict()
     in_dir = "../fetchImages/all_images_renamed/"
     traverse_dir(in_dir)
+    # add_ex_names()
 
 
 def initialize_dict() -> None:
@@ -27,6 +29,7 @@ def initialize_dict() -> None:
 
 
 def traverse_dir(in_dir: str) -> None:
+    ex_path = "../fetchImages/ex_images/"
     for key in d:
         out_path = "../../images/" + str(key) + '/'
         delete_directory(out_path)
@@ -41,6 +44,11 @@ def traverse_dir(in_dir: str) -> None:
                 out_path = "../../images/" + str(key) + '/'
                 rgb_img = Image.open(in_dir + img + ".png")
                 rgb_img.save(out_path + 'clr_' + str(cnt[i]) + ".png")
+                ex_file_path = ex_path + img + "_EX.png"
+                if (ex_exists(ex_file_path)):
+                    # print(ex_file_path)
+                    ex_img = Image.open(ex_file_path)
+                    ex_img.save(out_path + 'ex_' + str(cnt[i]) + ".png")
                 gray_img = fadeAlpha(rgb_img)
                 # gray_img = greyscale_avg(rgb_img)
                 # gray_img = Image.fromarray(np.uint8(cm.gist_earth(gray_img)*255))
@@ -63,6 +71,20 @@ def fadeAlpha(im2: Image):
         for x in range(width):
             pixels[x, y] = pixels[x, y][:3] + (fade255,)
     return im
+
+
+def ex_exists(in_path: str) -> bool:
+    return path.isfile(in_path)
+
+
+def add_ex_names() -> None:
+    in_path = "../fetchImages/ex_images/"
+    out_path = "ex_only.txt"
+    f = open(out_path, 'w')
+    for each in sorted(os.listdir(in_path)):
+        f.write(each.split("_EX.png")[0])
+        f.write('\n')
+    f.close()
 
 
 def delete_directory(out_path: str) -> None:

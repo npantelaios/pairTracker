@@ -2,3 +2,7 @@
   border: 10px solid black;
   height: 10%;
 } */
+
+.button {
+  border-radius: 50%;
+}

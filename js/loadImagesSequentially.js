@@ -1,5 +1,7 @@
-
 function loadImagesSequential(name, length, localstorageName, initPath){
+
+    // makeButtonsRound()
+
     var totalImages = length
     var rowLength = 12
 
@@ -46,9 +48,14 @@ function loadImagesSequential(name, length, localstorageName, initPath){
         if (prevState.innerHTML.length < 20){
             var table = document.createElement('table');
             // for screenshot purposes add #id=table0
+            // table.style.clear = "both";
             table.setAttribute("id", "table0");
             // for localstorage purposes add .class=table1
             table.setAttribute("class", "table1");
+            table.classList.add("float-left");
+            table.style.backgroundColor = "black";
+            // table.style.border = "4px solid black";
+            table.style.borderRadius = "5%";
 
             var tableBody = document.createElement('tbody');
             var row = document.createElement('tr');
@@ -60,6 +67,8 @@ function loadImagesSequential(name, length, localstorageName, initPath){
                 var cell = document.createElement('td');
                 rowData.classList.add("img1");
                 rowData.style.border = "4px solid black";
+                rowData.style.borderRadius = "30%";
+                rowData.style.backgroundColor = "white";
                 cell.appendChild(rowData);
                 row.appendChild(cell);
 
@@ -69,10 +78,11 @@ function loadImagesSequential(name, length, localstorageName, initPath){
                 imgMove.style.position = "relative";
                 imgMove.style.top = "-6px";
                 imgMove.style.left = "6px";
-                // imgMove.style.marginTop = 0;
                 imgMove.style.textAlign = 'center';
                 imgMove.style.border = "4px solid black";
-                // imgMove.style.paddingTop = 0;
+                imgMove.style.backgroundColor = "white";
+
+                // imgMove.style.borderRadius = "5%";
                 cellMove.appendChild(imgMove);
                 rowMove.appendChild(cellMove);
 
@@ -86,16 +96,24 @@ function loadImagesSequential(name, length, localstorageName, initPath){
             });
         
             table.appendChild(tableBody);
-            document.body.appendChild(table);
+            container = document.getElementsByClassName("container")[0];
+            container.insertBefore(table, container.firstChild);
+            // container.appendChild(table);
             localStorage.setItem("myTable"+localstorageName, table.outerHTML);
         }
         else{
             var myTable = document.createElement('table');
             myTable.setAttribute("id", "table0");
             myTable.setAttribute("class", "table1");
+            myTable.classList.add("float-left");
+            myTable.style.backgroundColor = "black";
+            // myTable.style.border = "4px solid black";   
+            myTable.style.borderRadius = "5%";
 
             myTable.innerHTML = localStorage.getItem("myTable"+localstorageName)
-            document.body.appendChild(myTable);
+            container = document.getElementsByClassName("container")[0];
+            container.insertBefore(myTable, container.firstChild);
+            // container.appendChild(myTable);
         }
     }
 
@@ -137,7 +155,27 @@ function loadImagesSequential(name, length, localstorageName, initPath){
         }
     }
 
+
+
     function switchGrayscale(elmt) {
+        if (typeof elmt !== 'undefined') {
+            if (!(elmt.src.indexOf("bw_") === -1)) {state = 'bw';}
+            else if (!(elmt.src.indexOf("clr_") === -1)) {state = 'clr';}
+            else if (!(elmt.src.indexOf("ex_") === -1)) { state = 'ex';}
+            if (state === 'bw') {elmt.src = elmt.src.replace('bw_','clr_')}
+            else if (state === 'ex') {elmt.src = elmt.src.replace('ex_','bw_')}
+            else if (state === 'clr') {
+                prevSource = elmt.src.replace("clr_", "ex_")
+                elmt.onerror = function() { elmt.src = elmt.src.replace("ex_", "bw_")}
+                elmt.src = elmt.src.replace("clr_", "ex_")
+            }
+        }   
+        else{
+            console.log("undefined")
+        }
+      }
+
+    function switchGrayscaleOLD(elmt) {
       if (typeof elmt !== 'undefined') {
           state = (elmt.src.indexOf("bw_") === -1) ? 'clr' : 'bw';
           (state === 'bw') ? elmt.src = elmt.src.replace('bw_','clr_') : elmt.src = elmt.src.replace('clr_','bw_');  
@@ -157,16 +195,24 @@ function loadImagesSequential(name, length, localstorageName, initPath){
         elmt.src = elmt.src.replace(moveLevel, newMoveLevel)
     }
 
+    function makeButtonsRound(){
+        var buttons = document.getElementsByTagName('button')
+        for (i=0; i<buttons.length; i++){
+            buttons[i].style.borderRadius = "50%";
+        }
+    }
+
 }
 
 
 
 function resetLocalstorage(){
-    localStorage.clear()
+    // localStorage.clear()
     var images = document.getElementsByClassName("img1");
     for (i=0; i<images.length; i++){
         if (images[i].src.indexOf("bw_") === -1){
             images[i].src = images[i].src.replace('clr_','bw_')
+            images[i].src = images[i].src.replace('ex_','bw_')
         }
     }
     

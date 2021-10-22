@@ -4,104 +4,112 @@
     <link rel="stylesheet" href="../css/basic.css">
 
     <script src="../js/loadImagesSequentially.js"></script>
+    <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
 
     <script src="../scripts/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <!-- <script data-main="scripts/app" src="scripts/require.js"></script> -->
+    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
 
 
     <title>POKEMAS PAIRS</title>
   </head>
 
   <!-- BODY STARTS-->
-  <body style="background-color: aquamarine;" onload="loadImagesSequential('../images/pokefairs',21,'pokefairs','../images/')">
+  <body style="background-color: aquamarine; background-image: url('../images/backgrounds/brown1.jpg');" onload="loadImagesSequential('../images/pokefairs',21,'pokefairs','../images/')">
+    <div class="container0 mw-100 ">
+      <div class="relative" style="clear:both;">
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = '../index.html';" id="myButton" class="float-left rounded-pill" >AllGacha</button>
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'eggmons.html';" id="myButton" class="float-left rounded-pill" >Eggmons</button>
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'limited.html';" id="myButton" class="float-left rounded-pill" >LimitedAll</button>
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'masterfair.html';" id="myButton" class="float-left rounded-pill" >MasterFair</button>
+        <button  style="border:8px solid white; font-size:40px; background-color: black; color:white" onclick="location.href = 'pokefair.html';" id="myButton" class="float-left rounded-pill" >PokeFair</button>    
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'seasonal.html';" id="myButton" class="float-left rounded-pill submit-button" >Seasonal</button>
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'females.html';" id="myButton" class="float-left rounded-pill submit-button" >Females</button>
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'males.html';" id="myButton" class="float-left rounded-pill submit-button" >Males</button>
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'freebies.html';" id="myButton" class="float-left rounded-pill submit-button" >FreeEvents</button>
+        <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = 'exonly.html';" id="myButton" class="float-left rounded-pill submit-button" >EX</button>
+      </div>
+    </div>
 
-    <div>
-      <button  style="font-size:40px" onclick="location.href = '../index.html';" id="myButton" class="float-left submit-button" >AllGacha</button>
-      <button  style="font-size:40px" onclick="location.href = 'eggmons.html';" id="myButton" class="float-left submit-button" >Eggmons</button>
-      <button  style="font-size:40px" onclick="location.href = 'limited.html';" id="myButton" class="float-left submit-button" >LimitedAll</button>
-      <button  style="font-size:40px" onclick="location.href = 'masterfair.html';" id="myButton" class="float-left submit-button" >MasterFair</button>
-      <button  style="border:10px solid black;font-size:40px" onclick="location.href = 'pokefair.html';" id="myButton" class="float-left submit-button" >PokeFair</button>    
-      <button  style="font-size:40px" onclick="location.href = 'seasonal.html';" id="myButton" class="float-left submit-button" >Seasonal</button>
-      <!-- <button  style="font-size:40px" onclick="location.href = 'f2p.html';" id="myButton" class="float-left submit-button" >F2P</button> -->
-      <!-- <button  style="font-size:40px" onclick="location.href = 'html/males.html';" id="myButton" class="float-left submit-button" >Females</button>
-      <button  style="font-size:40px" onclick="location.href = 'html/females.html';" id="myButton" class="float-left submit-button" >Males</button> -->
+    <div class="container mw-100 float-left" style="position:relative; margin-top: 1%;">
+      <div class="float-left" style="text-align:center; display: inline;">
+      <div class="rounded-pill" style="clear:left; font-size: 40px; margin-top: 1%; background-color: white; color:black">
+        <h1 style="text-align:center;">   Pairs   </h1>
+        <h1 class="pairCount" style="text-align:center;">0/0</h1>
+        <button class="rounded-pill float-center" id='clearBtn' onclick="resetLocalstorage()" style="text-align:center; font-size:40px; background-color: black; color:white">
+          Reset 
+        </button>
 
+      </div>
 
-  </div>
+      <div class="rounded-pill" style="clear:left; text-align:center; font-size: 40px; margin-top: 1%; background-color: white; color:black">
+        <h1 style="clear:both;">Screenshot will appear - right click to save</h1>      
+        <button class="rounded-pill" id='screenshotBtn' onclick="takeshot()" style="font-size:40px; background-color: black; color:white">
+          Take Screenshot
+        </button>      
+      </div>
 
-  <h2>WHICH PAIRS DO YOU OWN? </h2>
-  <h3 class="pairCount" style="border: 12px solid red; font-size: 40px; width: 200px; text-align:center;"></h3>
+    </div>
+
+      <a id="output" href="" download="AwesomeImage.png"></a>
+    </div>
+    
+    <script type="text/javascript">
   
-  <script type="text/javascript">
+      function takeshot() {
+          let tableDiv = document.getElementById('table0');
 
-    function takeshot() {
-        let tableDiv = document.getElementById('table0');
-        console.log(tableDiv.length)
-        let tableDivParent = tableDiv.parentElement;
-        const belowDiv = document.createElement("h1")
-        const belowDivText = document.createTextNode("Save image ABOVE with RIGHT CLICK");
-        belowDiv.appendChild(belowDivText)
-
-        html2canvas(tableDiv).then(
-            function (canvas) {
-
-              console.log(canvas.width)
-              console.log(canvas.height)
-              let pnGImage = new Image();
-              pnGImage.src = canvas.toDataURL();
-              pnGImage.style.border = "12px solid red";
-              document.getElementById("output").href = pnGImage.src
-              document.getElementById("output").appendChild(pnGImage);
-
-              tableDivParent.insertBefore(belowDiv, tableDiv);
-            })
-    }
-</script>
-
-<button id='screenshotBtn' onclick="takeshot()" style="font-size:40px">
-    Take Screenshot 
-</button>
-
-<h1>Screenshot will appear BELOW - RIGHT CLICK TO SAVE IMAGE</h1>
-<!-- <div id="output"></div> -->
-<a id="output" href="" download="AwesomeImage.png" ></a>
-
-
-
-<button id='clearBtn' onclick="resetLocalstorage()" style="font-size:40px">
-  Reset 
-</button>
-
-<script>
-  var htmlName = "pokefairs"
-  // Will execute myCallback every 1 second
-  var intervalLocalstorage = window.setInterval(localstorageCallback, 500);
-
-  function localstorageCallback() {
-    let myTable = document.getElementsByClassName("table1")
-    if(myTable.length > 0){
-      localStorage.setItem("myTable"+htmlName, myTable[0].outerHTML);
-    }
-  }
-
-  var intervalPaircounter = window.setInterval(paircounterCallback, 1000);
-  function paircounterCallback() {
-    var images = document.getElementsByClassName("img1");
-    var totalPairs = String(images.length);
-    var cnt = 0;
-    for (i=0; i<images.length; i++){
-      if (images[i].src.indexOf("bw_") === -1){
-        cnt ++;
+          // Use the html2canvas
+          // function to take a screenshot
+          // and append it
+          // to the output div
+          html2canvas(tableDiv).then(
+              function (canvas) {
+                console.log(canvas.width)
+                console.log(canvas.height)
+                let pngImage = new Image();
+                pngImage.src = canvas.toDataURL();
+                pngImage.style.border = "12px solid white";
+                pngImage.style.clear = "both";
+                document.getElementById("output").href = pngImage.src
+                document.getElementById("output").appendChild(pngImage);
+                // document.body.appendChild(screenshott)
+                // tableDivParent.insertBefore(belowDiv, tableDiv)
+              })
       }
+  </script>
+
+  <script>
+    var htmlName = "pokefairs"
+    // Will execute myCallback every 1 second
+    var intervalID = window.setInterval(myCallback, 500);
+
+    function myCallback() {
+      let myTable = document.getElementsByClassName("table1")
+      if(myTable.length > 0){
+        localStorage.setItem("myTable"+htmlName, myTable[0].outerHTML);
+      }
+    }  
+
+
+    var intervalPaircounter = window.setInterval(paircounterCallback, 1000);
+    function paircounterCallback() {
+      var images = document.getElementsByClassName("img1");
+      var totalPairs = String(images.length);
+      var cnt = 0;
+      for (i=0; i<images.length; i++){
+        if (images[i].src.indexOf("bw_") === -1){
+          cnt ++;
+        }
+      }
+      var activePairs = String(cnt);
+      var countPairElmt = document.getElementsByClassName("pairCount")[0]
+      countPairElmt.innerHTML = activePairs + '/' + totalPairs;
     }
-    var activePairs = String(cnt);
-    var countPairElmt = document.getElementsByClassName("pairCount")[0]
-    countPairElmt.innerHTML = activePairs + '/' + totalPairs;
-  }
 
-</script>
+  </script>
+  
 
-
-</body>
+  </body>
 </html>
