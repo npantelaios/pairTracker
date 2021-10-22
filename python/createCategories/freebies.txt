@@ -8,3 +8,4 @@ Sawyer_Honckrow
 Ghetsis_Kyurem
 Giovanni_Mewtwo
 Main_Character_Solgaleo
+Bugsy_Scyther
