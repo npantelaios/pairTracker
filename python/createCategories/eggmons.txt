@@ -44,3 +44,12 @@ Main_Character_Venomoth
 Main_Character_Venusaur
 Main_Character_Victreebel
 Main_Character_Wigglytuff
+Main_Character_Omastar
+Main_Character_Dragonite
+Main_Character_Arbok
+Main_Character_Gengar
+Main_Character_Weezing
+Main_Character_Marowak
+Main_Character_Sandslash
+Main_Character_Starmie
+Main_Character_Parasect

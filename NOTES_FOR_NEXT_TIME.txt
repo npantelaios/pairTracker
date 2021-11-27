@@ -1,0 +1,17 @@
+this time will be resetted
+next time no
+
+PLAN: 1 big table with all names available now
+    -> get as many names as you can 
+    -> get number of stars by row and mix-match
+    -> get all names from female files
+    -> log if bw, clr or ex for each pair
+    -> no need for length then
+
+allgacha -> 1, 95
+males -> 44
+females -> 1
+
+from python txt file list -> do not sort after adding new pairs
+switch accerola with last and silver with second to last 
+add new pairs in the end

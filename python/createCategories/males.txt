@@ -42,7 +42,6 @@ Red_Charizard
 Red_Snorlax
 Sidney_Absol
 Siebold_Octillery
-Silver_Ho_Oh
 Steven_Metagross
 Steven_Rayquaza
 Steven_Sandslash_Alola_Form
@@ -50,3 +49,6 @@ The_Masked_Royal_Incineroar
 Volkner_Luxray
 Wallace_Milotic
 Wally_Gallade
+Guzma_Buzzwole
+Grimsley_Bisharp
+Leon_Calyrex

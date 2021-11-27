@@ -14,10 +14,25 @@ d = {}
 
 
 def main():
-    initialize_dict()
-    in_dir = "../fetchImages/all_images_renamed/"
-    traverse_dir(in_dir)
+    # initialize_dict()
+    # in_dir = "../fetchImages/all_images_renamed/"
+    # traverse_dir(in_dir)
+    transfer_to_INFO_after_sorting("../../images/INFO/")
     # add_ex_names()
+
+
+def transfer_to_INFO_after_sorting(in_dir) -> None:
+    for category in categories:
+        with open(f'{in_dir}{category}.txt', 'w') as fout:
+            with open(f'{category}.txt', 'r') as fin:
+                lines = sorted(fin.read().splitlines())  # maybe .strip()?
+                l = len(lines)
+                for line in lines:
+                    # if it's the last line, don't put Enter '\n'
+                    if line == lines[l-1]:
+                        fout.write(line)
+                    else:
+                        fout.write(f'{line}\n')
 
 
 def initialize_dict() -> None:
@@ -43,16 +58,16 @@ def traverse_dir(in_dir: str) -> None:
             if img in d[key]:
                 out_path = "../../images/" + str(key) + '/'
                 rgb_img = Image.open(in_dir + img + ".png")
-                rgb_img.save(out_path + 'clr_' + str(cnt[i]) + ".png")
+                rgb_img.save(out_path + 'clr_' + img + ".png")
                 ex_file_path = ex_path + img + "_EX.png"
                 if (ex_exists(ex_file_path)):
                     # print(ex_file_path)
                     ex_img = Image.open(ex_file_path)
-                    ex_img.save(out_path + 'ex_' + str(cnt[i]) + ".png")
+                    ex_img.save(out_path + 'ex_' + img + ".png")
                 gray_img = fadeAlpha(rgb_img)
                 # gray_img = greyscale_avg(rgb_img)
                 # gray_img = Image.fromarray(np.uint8(cm.gist_earth(gray_img)*255))
-                gray_img.save(out_path + 'bw_' + str(cnt[i]) + ".png")
+                gray_img.save(out_path + 'bw_' + img + ".png")
                 cnt[i] += 1
 
 

@@ -1,5 +1,4 @@
 Acerola_Mimikyu
-Acerola_Palossand
 Bea_Sirfetch_d
 Bianca_Musharna
 Caitlin_Reuniclus
@@ -50,3 +49,10 @@ Selene_Decidueye
 Serena_Delphox
 Serena_Whimsicott
 Skyla_Togekiss
+Diantha_Keldeo
+Hilda_Diancie
+Jasmine_Celesteela
+Lusamine_Necrozma
+Elesa_Emolga
+Nessa_Eiscue
+Sonia_Yamper

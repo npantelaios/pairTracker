@@ -5,6 +5,7 @@
 
     <script src="../js/loadImagesSequentially.js"></script>
     <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <link rel="shortcut icon" type="image/jpg" href="../favicon.ico">
 
     <script src="../scripts/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
@@ -16,7 +17,7 @@
   </head>
 
   <!-- BODY STARTS-->
-  <body style="background-color: aquamarine; background-image: url('../images/backgrounds/brown1.jpg');" onload="loadImagesSequential('../images/females',52,'females','../images/')">
+  <body style="background-color: aquamarine; background-image: url('../images/backgrounds/brown1.jpg');" onload="loadImagesSequential('../images/females')">
     <div class="container0 mw-100 ">
       <div class="relative" style="clear:both;">
         <button  style="font-size:40px; background-color: black; color:white" onclick="location.href = '../index.html';" id="myButton" class="float-left rounded-pill" >AllGacha</button>
@@ -37,7 +38,7 @@
       <div class="rounded-pill" style="clear:left; font-size: 40px; margin-top: 1%; background-color: white; color:black">
         <h1 style="text-align:center;">   Pairs   </h1>
         <h1 class="pairCount" style="text-align:center;">0/0</h1>
-        <button class="rounded-pill float-center" id='clearBtn' onclick="resetLocalstorage('females')" style="text-align:center; font-size:40px; background-color: black; color:white">
+        <button class="rounded-pill float-center" id='clearBtn' onclick="resetLocalstorage('../images/females')" style="text-align:center; font-size:40px; background-color: black; color:white">
           Reset 
         </button>
 
@@ -50,13 +51,19 @@
         </button>      
       </div>
 
+      <div class="rounded-pill" style="clear:left; text-align:center; font-size: 40px; margin-top: 1%; background-color: white; color:black">
+        <h1 style="clear:both;">Check for new pairs here - Once per month</h1>      
+        <button class="rounded-pill" id='checkNewBtn' onclick="checkNewPairs('../images/females')" style="font-size:40px; background-color: black; color:white">
+          Refresh
+        </button>      
+      </div>
+
     </div>
 
       <a id="output" href="" download="AwesomeImage.png"></a>
     </div>
     
     <script type="text/javascript">
-  
       function takeshot() {
           let tableDiv = document.getElementById('table0');
 
@@ -110,6 +117,6 @@
 
   </script>
   
-
+  <p>REFRESHING BEFORE NOVEMBER 2021: REFRESH BUTTON RESETS PROGRESS, BUT SINCE NOVEMBER 2021 IT HAS BEEN FIXED AND PROGRESS IS SAVED FROM NOW ON</p>
   </body>
 </html>
