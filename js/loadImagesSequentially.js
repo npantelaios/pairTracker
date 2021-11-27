@@ -45,9 +45,6 @@ function checkNewPairs(name){
 async function recalculateImagesAll(name, valueDictionary){
     var localstorageName = name.split('/').pop()
     var initPath = name.replace(localstorageName, '')
-    console.log(initPath)
-    console.log(localstorageName)
-    console.log(name)
     var pairsText = await fetchAsync(`${initPath}INFO/${localstorageName}.txt`)
     var pairsNames = pairsText.split('\n')
 
@@ -153,11 +150,10 @@ async function recalculateImagesAll(name, valueDictionary){
         var trainerName = img.src.split('.png')[0]
         tempPart = trainerName.split("_")[0]
         trainerName = trainerName.replace(tempPart+'_', '')
-        if(trainerName.includes("names/")){
+        if(trainerName.includes("names/") || trainerName.includes("only/")){
             tempPart = trainerName.split("_")[0]
             trainerName = trainerName.replace(tempPart+'_', '')
         }
-        console.log(trainerName)
         var ratio = window.devicePixelRatio || 1;
         var w = screen.width * ratio;
         var imgMove = new Image();
