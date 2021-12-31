@@ -51,3 +51,7 @@ Lusamine_Necrozma
 Elesa_Emolga
 Leon_Calyrex
 Nessa_Eiscue
+Cynthia_Giratina
+Sabrina_Chingling
+Volkner_Electrivire
+Lucas_Dialga

@@ -6,6 +6,7 @@ Blue_Blastoise
 Burgh_Togepi
 Caitlin_Sableye
 Cynthia_Garchomp
+Cynthia_Giratina
 Cynthia_Kommo_o
 Dawn_Alcremie
 Diantha_Gardevoir
@@ -30,6 +31,7 @@ Leon_Charizard
 Leon_Eternatus
 Lillie_Lunala
 Lillie_Ribombee
+Lucas_Dialga
 Lusamine_Necrozma
 Lyra_Jigglypuff
 Lysandre_Yveltal
@@ -45,9 +47,11 @@ Raihan_Duraludon
 Red_Charizard
 Red_Snorlax
 Rosa_Delibird
+Sabrina_Chingling
 Serena_Whimsicott
 Siebold_Octillery
 Skyla_Togekiss
 Steven_Metagross
 Steven_Rayquaza
 Steven_Sandslash_Alola_Form
+Volkner_Electrivire

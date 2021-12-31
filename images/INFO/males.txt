@@ -31,6 +31,7 @@ Lear_Hoopa
 Leon_Calyrex
 Leon_Charizard
 Leon_Eternatus
+Lucas_Dialga
 Lysandre_Yveltal
 Maxie_Groudon
 Morty_Banette
@@ -49,6 +50,7 @@ Steven_Metagross
 Steven_Rayquaza
 Steven_Sandslash_Alola_Form
 The_Masked_Royal_Incineroar
+Volkner_Electrivire
 Volkner_Luxray
 Wallace_Milotic
 Wally_Gallade

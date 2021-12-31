@@ -56,3 +56,5 @@ Lusamine_Necrozma
 Elesa_Emolga
 Nessa_Eiscue
 Sonia_Yamper
+Cynthia_Giratina
+Sabrina_Chingling

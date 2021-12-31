@@ -4,6 +4,7 @@ Bianca_Musharna
 Caitlin_Reuniclus
 Caitlin_Sableye
 Cynthia_Garchomp
+Cynthia_Giratina
 Cynthia_Kommo_o
 Dawn_Alcremie
 Dawn_Torterra
@@ -51,6 +52,7 @@ Plumeria_Salazzle
 Rosa_Delibird
 Rosa_Serperior
 Sabrina_Alakazam
+Sabrina_Chingling
 Selene_Decidueye
 Serena_Delphox
 Serena_Whimsicott

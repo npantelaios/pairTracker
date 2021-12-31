@@ -13,6 +13,7 @@ Lance_Dragonite
 Leaf_Venusaur_Female
 Lear_Hoopa
 Leon_Eternatus
+Lucas_Dialga
 Lysandre_Yveltal
 Marnie_Morpeko
 N_Zekrom

@@ -20,3 +20,4 @@ Steven_Metagross
 Leaf_Venusaur_Female
 Lear_Hoopa
 Elesa_Emolga
+Lucas_Dialga

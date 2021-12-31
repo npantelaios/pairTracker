@@ -1,0 +1,9 @@
+1) put html code from https://tiermaker.com/create/pokemon-masters-by-sages-1132341 to /python/fetchImages/test.html
+2) run fetch.py
+
+3) move which images you want from python/fetchImages/all_images_initial to all_images_renamed
+4) move which EX images you want from python/fetchImages/all_images_initial to ex_images
+5) update text files on python/createCategories/all_names.txt and other .txt files in folder
+6) run categories.py
+
+7) Now everything moved to /images/INFO

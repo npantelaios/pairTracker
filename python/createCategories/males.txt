@@ -52,3 +52,5 @@ Wally_Gallade
 Guzma_Buzzwole
 Grimsley_Bisharp
 Leon_Calyrex
+Volkner_Electrivire
+Lucas_Dialga

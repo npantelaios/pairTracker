@@ -14,9 +14,9 @@ d = {}
 
 
 def main():
-    # initialize_dict()
-    # in_dir = "../fetchImages/all_images_renamed/"
-    # traverse_dir(in_dir)
+    initialize_dict()
+    in_dir = "../fetchImages/all_images_renamed/"
+    traverse_dir(in_dir)
     transfer_to_INFO_after_sorting("../../images/INFO/")
     # add_ex_names()
 

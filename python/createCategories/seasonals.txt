@@ -22,3 +22,5 @@ Guzma_Buzzwole
 Jasmine_Celesteela
 Leon_Calyrex
 Nessa_Eiscue
+Sabrina_Chingling
+Volkner_Electrivire

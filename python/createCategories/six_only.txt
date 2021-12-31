@@ -105,3 +105,7 @@ Elesa_Emolga
 Leon_Calyrex
 Nessa_Eiscue
 Sonia_Yamper
+Cynthia_Giratina
+Sabrina_Chingling
+Volkner_Electrivire
+Lucas_Dialga
